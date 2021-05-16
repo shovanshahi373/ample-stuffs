@@ -1,0 +1,33 @@
+body {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  height: 100vh;
+  background-color: #272833;
+  color: white;
+  display: flex;
+  margin: 0;
+  font-size: clamp(20px, 4vw, 3rem);
+  align-items: center;
+  justify-content: center;
+}
+
+.p2 span:first-child {
+  color: skyblue;
+}
+
+.phaser {
+  opacity: 0;
+  transition: all;
+  will-change: opacity;
+  animation: phase 0.5s ease-in infinite;
+  font-weight: bolder;
+  display: inline-block;
+  color: red;
+  animation-direction: alternate;
+  margin-left: -4px;
+}
+
+@keyframes phase {
+  to {
+    opacity: 1;
+  }
+}

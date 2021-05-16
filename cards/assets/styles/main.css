@@ -1,0 +1,153 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+body {
+  height: 100vh;
+  background-image: url("../images/texture.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.container {
+  --card-width-coefficient: 2;
+  --card-height-coefficient: 3;
+  --card-size-factor: 5vw;
+  width: 550px;
+  height: 550px;
+  margin: auto;
+  /* border: 1px solid black; */
+  padding: 30px;
+  display: flex;
+  /* height: 100%; */
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+
+.deckPile {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  background-image: url("../images/red_back.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  transform: translate(-50%, -50%);
+  height: calc(var(--card-height-coefficient) * var(--card-size-factor));
+  width: calc(var(--card-width-coefficient) * var(--card-size-factor));
+}
+
+.card {
+  height: 100%;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  opacity: 1;
+  transition: all 1s ease-in;
+  /* position: absolute; */
+}
+
+.hand {
+  /* position: absolute; */
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  align-items: center;
+}
+
+.hand.hand-player-1 {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 30vmin;
+  align-items: baseline;
+}
+.hand.hand-player-2 {
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 30vmin;
+  align-items: flex-end;
+}
+.hand.hand-player-3 {
+  top: 0;
+  right: 0;
+  /* width: 100%;
+  height: 30vmin; */
+  width: 30vmin;
+  height: 100%;
+  gap: 0;
+  /* transform: rotate(-90deg); */
+  /* transform-origin: top right; */
+  flex-direction: column;
+  /* align-items: flex-end; */
+}
+.hand.hand-player-4 {
+  left: 0;
+  top: 0;
+  /* width: 100%;
+  height: 30vmin; */
+  gap: 0;
+  width: 30vmin;
+  height: 100%;
+  /* transform: rotate(90deg); */
+  /* transform-origin: top left; */
+  /* align-items: flex-end; */
+  flex-direction: column;
+}
+
+.hand.hand-player-3 > span,
+.hand.hand-player-4 > span {
+  transform: rotate(90deg);
+}
+
+.hand .slot {
+  /* position: absolute; */
+  height: calc(var(--card-height-coefficient) * var(--card-size-factor));
+  width: calc(var(--card-width-coefficient) * var(--card-size-factor));
+  /* border: 1px solid black; */
+  /* background-image: url("../images/red_back.png"); */
+  border-radius: 5px;
+  transition: all 1s ease-in-out;
+  /* overflow: hidden; */
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
+}
+
+.card.decked {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  height: calc(var(--card-height-coefficient) * var(--card-size-factor));
+  width: calc(var(--card-width-coefficient) * var(--card-size-factor));
+  transform: translate(-50%, -50%) !important;
+  opacity: 0;
+}
+
+/* .hand .slot:first-child {
+  transform: rotate(0deg);
+  transform-origin: right bottom;
+}
+.hand .slot:nth-child(2) {
+  transform: rotate(25deg);
+  transform-origin: right bottom;
+}
+.hand .slot:last-child {
+  transform: rotate(50deg);
+  transform-origin: right bottom;
+} */
+
+/* .hand.hand-player-3 .slot,
+.hand.hand-player-4 .slot {
+  transform: rotate(90deg);
+} */

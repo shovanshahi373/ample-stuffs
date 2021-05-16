@@ -1,0 +1,57 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  background: blue;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  height: 90vh;
+  width: 90vw;
+  box-shadow: 0 0 0 1px wheat;
+  overflow: hidden;
+}
+
+.wrapper {
+  display: flex;
+  height: 100%;
+  width: 300%;
+  transition: 0.5s;
+  cursor: grab;
+}
+
+.wrapper.grabbing {
+  cursor: grabbing;
+}
+
+.frame {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-weight: bold;
+  font-size: 50px;
+  width: 100%;
+  font-family: cursive;
+  user-select: none;
+}
+
+.frame1 {
+  background: teal;
+}
+.frame2 {
+  background: tomato;
+}
+.frame3 {
+  background: yellowgreen;
+}
